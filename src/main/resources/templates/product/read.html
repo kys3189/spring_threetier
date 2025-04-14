@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>상품 단일 조회</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>상품 명 / </td>
+            <td>상품 가격 / </td>
+            <td>상품 재고 / </td>
+            <td>브랜드</td>
+        </tr>
+        <tr>
+            <td>
+                <span th:text="${product.productName}"></span>
+            </td>
+            <td>
+                <span th:text="${product.productPrice}"></span>
+            </td>
+            <td>
+                <span th:text="${product.productStock}"></span>
+            </td>
+            <td>
+                <span th:text="${product.productBrand}"></span>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <a th:href="@{/product/list}">상품 목록</a>
+        <a th:href="@{/product/update(id=${product.id})}">상품 수정</a>
+        <a th:href="@{/product/delete(id=${product.id})}">상품 삭제</a>
+    </div>
+</body>
+<script th:inline="javascript"></script>
+</html>

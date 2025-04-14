@@ -11,4 +11,10 @@
         SELECT ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_BRAND
         FROM TBL_PRODUCT
     </select>
+<!--  상품 단일 조회  -->
+    <select id="select" resultType="ProductVO" parameterType="Long">
+        SELECT ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_BRAND
+        FROM TBL_PRODUCT
+        WHERE ID = #{id}
+    </select>
 </mapper>

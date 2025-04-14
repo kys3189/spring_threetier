@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -20,6 +21,10 @@ public class ProductDAO {
 //    상품 리스트 조회
     public List<ProdectVO> productList() {
         return productMapper.selectAll();
+    }
+//    상품 단일 조회
+    public Optional<ProdectVO> selectById(Long id) {
+        return productMapper.select(id);
     }
 
 }

@@ -9,12 +9,27 @@
 </head>
 <body>
     <table>
-        <th>
-            <input type="hidden" name="productId" th:value="${}">
-            <td>상품 명</td>
-            <td></td>
-            <td></td>
-        </th>
+        <tr>
+            <td>상품 명 / </td>
+            <td>상품 가격 / </td>
+            <td>상품 재고 / </td>
+            <td>브랜드</td>
+        </tr>
+        <th:block th:each="product : ${productList}">
+            <tr>
+                <td>
+                    <a th:href="@{/product/read(id=${product.id})}">
+                        <span th:text="${product.productName}"></span>
+                    </a>
+                </td>
+                <td th:text="${product.productPrice}"></td>
+                <td th:text="${product.productStock}"></td>
+                <td th:text="${product.productBrand}"></td>
+            </tr>
+        </th:block>
     </table>
+    <div>
+        <a th:href="@{/product/write}">상품 등록</a>
+    </div>
 </body>
 </html>
